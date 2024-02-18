@@ -1,0 +1,35 @@
+@import "vanilla-framework";
+@include vanilla;
+
+.main-row {
+    margin-top: 1em;
+}
+
+.p-card--highlighted {
+    border-top: 4px solid #77216F;
+    border-radius: 4px 4px 0 0;
+
+    .title-container {
+        max-height: 6em;
+
+        h3,
+        a {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            @supports (-webkit-line-clamp: 1) {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: initial;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+
+            :hover {
+                overflow: visible;
+            }
+        }
+    }
+}
